@@ -68,7 +68,7 @@ export class XrpcEventStreamClient extends EventEmitter {
 
   private handleError(error: Error | string, message?: string) {
     console.error(error)
-    this.emit('error', new EventStreamError(error.toString(), message))
+    this.emit('error', new EventStreamError(error?.toString(), message))
     this.close()
   }
 
